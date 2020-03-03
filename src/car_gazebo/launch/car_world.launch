@@ -25,8 +25,10 @@
   
   
   <!-- include ros_control -->
+  <?ignore
   <param name="robot_description"
     command="$(find xacro)/xacro --inorder '$(find car_control)/launch/car_control.xacro'" /> 
+  ?>
 
   <!-- load the URDF into the ROS Parameter Server -->
   <param name="robot_description"
@@ -49,7 +51,11 @@
   <arg name="use_rviz" default="false" />
   <node pkg="rviz" type="rviz" name="rviz" args="-d $(find car_gazebo)/rviz_cfg/sim.rviz" if="$(arg use_rviz)"/>
 
-  
+  <!-- run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+  <param name="box_description"
+    command="$(find xacro)/xacro --inorder '$(find car_description)/carA/box.xacro'" />
+  <node name="box_urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model box -x -2 -y 1 -z 0 -param box_description"/>
 
   
 

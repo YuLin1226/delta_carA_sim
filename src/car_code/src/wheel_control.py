@@ -18,14 +18,14 @@ class WheelControl():
         rospy.spin()
 
     def get_value(self, cmd_value):
-        self.cmd_lx = cmd_value.linear.x / self.sampling_rate
-        self.cmd_az = cmd_value.angular.z / self.sampling_rate
+        self.cmd_lx = cmd_value.linear.x 
+        self.cmd_az = cmd_value.angular.z 
         self.cal_diff_cmd(self.cmd_lx, self.cmd_az)
         self.move_control(self.left_vel, self.right_vel)
 
     def cal_diff_cmd(self, lx, az):
-        self.left_vel  = self.last_left_vel  + (lx - az*0.35)*0.15
-        self.right_vel = self.last_right_vel + (lx + az*0.35)*0.15
+        self.left_vel  = self.last_left_vel  + (lx - az*0.35)/0.15/self.sampling_rate
+        self.right_vel = self.last_right_vel + (lx + az*0.35)/0.15/self.sampling_rate
         self.last_left_vel  = self.left_vel
         self.last_right_vel = self.right_vel
 
