@@ -1,0 +1,51 @@
+
+material Yulin/fucface
+{
+  receive_shadows on
+  technique
+  {
+    pass
+    {
+      lighting on
+      emissive 0.5 0.5 0.5 0.5
+
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../textures/index.png
+        // Repeat the texture over the surface (4 per face)
+        scale 1.0 1.0
+      }
+    }
+  }
+}
+
+
+material Test/photo
+{
+    receive_shadows on
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture ../textures/index.png
+                scale 1.0 1.0
+            }
+        }   
+    }
+}
+
+material Test/Grey{
+    receive_shadows on
+    technique
+    {
+        pass main
+        {
+            ambient 0.3 0.3 0.3 1.0
+            diffuse 0.7 0.7 0.7 1.0
+            specular 0.01 0.01 0.01 1.00000 1.50000
+        }   
+    }
+}

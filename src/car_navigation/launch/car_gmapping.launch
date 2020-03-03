@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <arg name="use_rviz" default="true" />
+	
+    <!-- keyboard teleop -->
+    <node name="teleop_twist_keyboard" pkg="car_navigation" type="teleop_twist_keyboard.py" />
+    <node pkg="car_code" type="wheel_control.py" name="wheel_controller"/>
+
+    <!-- solabot core -->
+    <!-- # Actually rf2o and robot_localization will not be used-->
+    <!-- # Since gmapping has its own localization method-->
+    <include file="$(find car_navigation)/launch/car_core.launch" />
+
+    <!-- gmapping -->
+    <include file="$(find car_navigation)/launch/includes/gmapping.xml" />
+    
+    <!-- Rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find car_gazebo)/rviz_cfg/gmapping.rviz" if="$(arg use_rviz)"/>
+</launch>

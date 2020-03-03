@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<robot>
+    <gazebo reference="carA__rear_hokuyo">
+      <sensor type="ray" name="hokuyo_rear">
+        <pose>0 0 0.0124 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>40</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>683</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.094395</min_angle>
+              <max_angle>2.094395</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_hokuyo_rear" filename="libgazebo_ros_laser.so">
+          <topicName>rear/scan</topicName>
+          <frameName>/hokuyo_rear_link</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+
+    <gazebo reference="carA__front_hokuyo">
+      <sensor type="ray" name="hokuyo_front">
+        <pose>0 0 0.0124 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>40</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>683</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.094395</min_angle>
+              <max_angle>2.094395</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>5.0</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_hokuyo_front" filename="libgazebo_ros_laser.so">
+          <topicName>front/scan</topicName>
+          <frameName>/hokuyo_front_link</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/car</robotNamespace>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>true</legacyModeNS>
+      </plugin>
+    </gazebo>
+
+
+    <gazebo reference="camera">
+      <sensor type="camera" name="camera_sensor">
+        <parent link="camera"/>
+        <update_rate>30.0</update_rate>
+        <camera>
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>
+            <format>R8G8B8</format>
+            <width>800</width>
+            <height>800</height>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <cameraName>arm_sensors/camera</cameraName>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <frameName>camera</frameName>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="imu_link">
+      <gravity>true</gravity>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <visualize>true</visualize>
+        <topic>__default_topic__</topic>
+        <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+          <topicName>imu_data</topicName>
+          <bodyName>imu_link</bodyName>
+          <updateRateHZ>30.0</updateRateHZ>
+          <gaussianNoise>0.0001</gaussianNoise>
+          <xyzOffset>0 0 0</xyzOffset>
+          <rpyOffset>0 0 0</rpyOffset>
+          <frameName>imu_link</frameName>
+        </plugin>
+        <pose>0 0 0 0 0 0</pose>
+      </sensor>
+    </gazebo>
+
+    <!-- Car's Physical Parameter Setup -->
+    <gazebo reference="carA__base_link">
+        <material>SOLab/aruco200</material>
+    </gazebo>
+       
+    <gazebo reference="carA__left_wheel">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+
+    <gazebo reference="carA__right_wheel">
+      <mu1>0.2</mu1>
+      <mu2>0.2</mu2>
+      <material>Gazebo/Grey</material>
+    </gazebo>
+
+    <gazebo reference="carA__link_1">
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="carA__link_1_clone">
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+      <material>Gazebo/Black</material>
+    </gazebo>
+    
+    <gazebo reference="carA__link_1_clone_0">
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+      <material>Gazebo/Black</material>
+    </gazebo>
+    
+    <gazebo reference="carA__link_1_clone_1">
+      <mu1>0</mu1>
+      <mu2>0</mu2>
+      <material>Gazebo/Black</material>
+    </gazebo>
+</robot>

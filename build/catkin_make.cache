@@ -1,0 +1,2 @@
+car_code:car_control:car_description:car_gazebo:car_navigation:ira_laser_tools:pysdf:rf2o_laser_odometry
+-DCATKIN_DEVEL_PREFIX=/home/yulin/carA_sim_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yulin/carA_sim_ws/install -G Unix Makefiles

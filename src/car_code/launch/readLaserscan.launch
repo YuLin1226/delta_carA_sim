@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="car_code" name="read_front_hokuyo" type="read_laserscan.py" output="screen">
+        <param name="angle_deviation" value="0.5404195002"/>
+        <param name="x_deviation" value="0.45"/>
+        <param name="y_deviation" value="0.25"/>
+        <remap from = "/scan" to = "/front/scan"/>
+        <remap from = "/laser_xy" to = "/front/laser_xy"/>
+    </node>
+
+    <node pkg="car_code" name="read_rear_hokuyo" type="read_laserscan.py" output="screen">
+        <param name="angle_deviation" value="-2.6009805"/>
+        <param name="x_deviation" value="-0.45"/>
+        <param name="y_deviation" value="-0.25"/>
+        <remap from = "/scan" to = "/rear/scan"/>
+        <remap from = "/laser_xy" to = "/rear/laser_xy"/>
+    </node>
+</launch>

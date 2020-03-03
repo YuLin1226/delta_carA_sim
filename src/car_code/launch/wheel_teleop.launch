@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- wheel_control node -->
+    <node pkg="car_code" type="wheel_control.py" name="wheel_control"/>
+    <!-- teleop node -->
+    <node pkg="car_navigation" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>
+</launch>
