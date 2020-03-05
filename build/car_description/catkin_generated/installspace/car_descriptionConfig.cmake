@@ -131,7 +131,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yulin/carA_sim_ws/install/lib;/home/yulin/carA_sim_ws/devel/lib;/home/yulin/carA_nav_ws/devel/lib;/home/yulin/Delta/devel/lib;/home/yulin/car_ws/devel/lib;/home/yulin/box_ws/devel/lib;/home/yulin/test_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/yulin/carA_sim_ws/install/lib;/home/yulin/solamr_simulator/devel/lib;/home/yulin/carA_sim_ws/devel/lib;/home/yulin/carA_nav_ws/devel/lib;/home/yulin/Delta/devel/lib;/home/yulin/car_ws/devel/lib;/home/yulin/box_ws/devel/lib;/home/yulin/test_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

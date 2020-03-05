@@ -7,9 +7,8 @@ class WheelControl():
 
     def __init__(self):
         rospy.init_node('wheel_controller', anonymous=True)
-        # pub1 : left wheel // pub2 : right wheel
-        self.pub1 = rospy.Publisher('/car/left_wheel_controller/command', Float64, queue_size=10)
-        self.pub2 = rospy.Publisher('/car/right_wheel_controller/command', Float64, queue_size=10)
+        self.pub_left = rospy.Publisher('/car/left_wheel_controller/command', Float64, queue_size=10)
+        self.pub_right = rospy.Publisher('/car/right_wheel_controller/command', Float64, queue_size=10)
         self.sampling_rate = 10
         self.rate = rospy.Rate(self.sampling_rate)
         self.last_left_vel = 0
@@ -30,8 +29,8 @@ class WheelControl():
         self.last_right_vel = self.right_vel
 
     def move_control(self, left_vel, right_vel): 
-        self.pub1.publish(left_vel)
-        self.pub2.publish(right_vel)
+        self.pub_left.publish(left_vel)
+        self.pub_right.publish(right_vel)
         
     
 if __name__ == '__main__':

@@ -91,7 +91,7 @@
           </clip>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <cameraName>arm_sensors/camera</cameraName>
+          <cameraName>camera</cameraName>
           <alwaysOn>true</alwaysOn>
           <updateRate>0.0</updateRate>
           <imageTopicName>image_raw</imageTopicName>
@@ -100,6 +100,13 @@
         </plugin>
       </sensor>
     </gazebo>
+
+
+
+
+
+
+
 
     <gazebo reference="imu_link">
       <gravity>true</gravity>
@@ -123,7 +130,7 @@
 
     <!-- Car's Physical Parameter Setup -->
     <gazebo reference="carA__base_link">
-        <material>SOLab/aruco200</material>
+        <material>Yulin/fucface</material>
     </gazebo>
        
     <gazebo reference="carA__left_wheel">

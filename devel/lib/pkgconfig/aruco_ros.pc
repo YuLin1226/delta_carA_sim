@@ -1,0 +1,8 @@
+prefix=/home/yulin/carA_sim_ws/devel
+
+Name: aruco_ros
+Description: Description of aruco_ros
+Version: 0.2.4
+Cflags: -I/home/yulin/carA_sim_ws/devel/include -I/home/yulin/carA_sim_ws/src/aruco_ros/include
+Libs: -L/home/yulin/carA_sim_ws/devel/lib -laruco_ros_utils
+Requires: aruco sensor_msgs tf

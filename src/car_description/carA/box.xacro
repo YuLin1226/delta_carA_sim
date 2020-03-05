@@ -21,6 +21,6 @@
   </link>
 
   <gazebo reference="box_link">
-    <material>SOLab/aruco200</material>
+    <material>Yulin/fucface</material>
   </gazebo>
 </robot>

@@ -1,0 +1,8 @@
+prefix=/home/yulin/carA_sim_ws/devel
+
+Name: aruco
+Description: Description of aruco
+Version: 0.2.4
+Cflags: -I/home/yulin/carA_sim_ws/src/aruco/include
+Libs: -L/home/yulin/carA_sim_ws/devel/lib -laruco
+Requires: 

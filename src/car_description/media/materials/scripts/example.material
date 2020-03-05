@@ -1,4 +1,3 @@
-
 material Yulin/fucface
 {
   receive_shadows on
@@ -12,7 +11,7 @@ material Yulin/fucface
       texture_unit
       {
         // Relative to the location of the material script
-        texture ../textures/index.png
+        texture ../textures/mk.png
         // Repeat the texture over the surface (4 per face)
         scale 1.0 1.0
       }

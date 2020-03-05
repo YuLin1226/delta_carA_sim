@@ -1,0 +1,2 @@
+set(fiducial_msgs_MESSAGE_FILES "/home/yulin/carA_sim_ws/src/fiducial_msgs/msg/Fiducial.msg;/home/yulin/carA_sim_ws/src/fiducial_msgs/msg/FiducialArray.msg;/home/yulin/carA_sim_ws/src/fiducial_msgs/msg/FiducialTransform.msg;/home/yulin/carA_sim_ws/src/fiducial_msgs/msg/FiducialTransformArray.msg;/home/yulin/carA_sim_ws/src/fiducial_msgs/msg/FiducialMapEntry.msg;/home/yulin/carA_sim_ws/src/fiducial_msgs/msg/FiducialMapEntryArray.msg")
+set(fiducial_msgs_SERVICE_FILES "/home/yulin/carA_sim_ws/src/fiducial_msgs/srv/InitializeMap.srv")
