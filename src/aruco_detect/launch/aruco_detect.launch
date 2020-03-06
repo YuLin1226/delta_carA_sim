@@ -1,6 +1,6 @@
 <!-- Run the aruco_detect node -->
 <launch>
-  <arg name="use_aruco_detect" default="false" />
+  <arg name="use_aruco_detect" default="true" />
 
   <!-- namespace for camera input -->
   <arg name="camera" default="/camera"/>

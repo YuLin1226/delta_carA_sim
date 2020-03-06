@@ -30,7 +30,7 @@
   <param name="robot_description"
     command="$(find xacro)/xacro --inorder '$(find car_description)/carA/carA.xacro'" />
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -model carA -x -4 -y 0 -z 0 -param robot_description"/>
+    args="-urdf -model carA -x -6 -y 0 -z 0 -param robot_description"/>
 
   <!-- ros_control launch file-->
   <include file="$(find car_control)/launch/car_control.launch" />
@@ -66,6 +66,7 @@
 ?> 
 
   <!-- start get_fiducial_tf node -->
-  <node name="get_fiducial_tf" pkg="car_code" type="get_fiducial_tf.py" respawn="false"/>
+  <arg name="use_get_fiducial_tf" default="false" />
+  <node name="get_fiducial_tf" pkg="car_code" type="get_fiducial_tf.py" respawn="false" if="$(arg use_get_fiducial_tf)"/>
 
 </launch>

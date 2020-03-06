@@ -21,6 +21,6 @@
   </link>
 
   <gazebo reference="box_link">
-    <material>test/aruco</material>
+    <material>test/aruco50</material>
   </gazebo>
 </robot>

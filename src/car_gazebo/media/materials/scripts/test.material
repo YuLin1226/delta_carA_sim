@@ -37,15 +37,24 @@ material test/photo
     }
 }
 
-material Test/Grey{
-    receive_shadows on
-    technique
+material test/aruco50
+
+{
+  receive_shadows on
+  technique
+  {
+    pass
     {
-        pass main
-        {
-            ambient 0.3 0.3 0.3 1.0
-            diffuse 0.7 0.7 0.7 1.0
-            specular 0.01 0.01 0.01 1.00000 1.50000
-        }   
+      lighting on
+      emissive 0.5 0.5 0.5 0.5
+
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../textures/aruco50.png
+        // Repeat the texture over the surface (4 per face)
+        scale 1.0 1.0
+      }
     }
+  }
 }
