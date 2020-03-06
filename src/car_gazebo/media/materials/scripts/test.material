@@ -1,4 +1,5 @@
-material Yulin/fucface
+material test/aruco
+
 {
   receive_shadows on
   technique
@@ -20,7 +21,7 @@ material Yulin/fucface
 }
 
 
-material Test/photo
+material test/photo
 {
     receive_shadows on
     technique

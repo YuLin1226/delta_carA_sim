@@ -130,7 +130,7 @@
 
     <!-- Car's Physical Parameter Setup -->
     <gazebo reference="carA__base_link">
-        <material>Yulin/fucface</material>
+        <material>test/photo</material>
     </gazebo>
        
     <gazebo reference="carA__left_wheel">
@@ -172,26 +172,5 @@
 
 
 
-    <!-- <gazebo>
-      <plugin name="carA_wheel_controller" filename="libgazebo_ros_diff_drive.so">
-        <commandTopic>cmd_vel</commandTopic>
-        <odometryTopic>odom</odometryTopic>
-        <odometryFrame>odom</odometryFrame>
-        <odometrySource>world</odometrySource>
-        <publishOdomTF>true</publishOdomTF>
-        <robotBaseFrame>carA__base_link</robotBaseFrame>
-        <publishWheelTF>false</publishWheelTF>
-        <publishTf>true</publishTf>
-        <publishWheelJointState>true</publishWheelJointState>
-        <legacyMode>false</legacyMode>
-        <updateRate>30</updateRate>
-        <leftJoint>carA__link_0_JOINT_5</leftJoint>
-        <rightJoint>carA__link_0_JOINT_4</rightJoint>
-        <wheelSeparation>0.7</wheelSeparation>
-        <wheelDiameter>0.15</wheelDiameter>
-        <wheelAcceleration>1</wheelAcceleration>
-        <wheelTorque>5</wheelTorque>
-        <rosDebugLevel>na</rosDebugLevel>
-      </plugin>
-    </gazebo> -->
+
 </robot>

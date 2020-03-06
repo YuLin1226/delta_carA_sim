@@ -1,5 +1,7 @@
 <!-- Run the aruco_detect node -->
 <launch>
+  <arg name="use_aruco_detect" default="false" />
+
   <!-- namespace for camera input -->
   <arg name="camera" default="/camera"/>
   <arg name="image" default="image"/>
@@ -11,7 +13,7 @@
   <arg name="fiducial_len_override" default="" />
 
   <node pkg="aruco_detect" name="aruco_detect"
-    type="aruco_detect"  respawn="false">
+    type="aruco_detect"  respawn="false" if="$(arg use_aruco_detect)">
     <param name="image_transport" value="$(arg transport)"/>
     <param name="publish_images" value="true" />
     <param name="fiducial_len" value="$(arg fiducial_len)"/>

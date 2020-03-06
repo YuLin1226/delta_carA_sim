@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PATH="/opt/ros/kinetic/bin:/home/yulin/.local/share/umake/bin:/home/yulin/bin:/home/yulin/.local/bin:/home/yulin/.local/share/umake/bin:/home/yulin/bin:/home/yulin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/yulin/carA_sim_ws/build"

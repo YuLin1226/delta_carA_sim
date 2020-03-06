@@ -21,6 +21,6 @@
   </link>
 
   <gazebo reference="box_link">
-    <material>Yulin/fucface</material>
+    <material>test/aruco</material>
   </gazebo>
 </robot>
