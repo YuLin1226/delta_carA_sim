@@ -32,7 +32,7 @@
 
   <!-- run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-urdf -model carA -x -2 -y 0 -z 0 -param robot_description"/>
+    args="-urdf -model carA -x -4 -y 0 -z 0 -param robot_description"/>
 
   <!-- ros_control launch file-->
   <include file="$(find car_control)/launch/car_control.launch" />
