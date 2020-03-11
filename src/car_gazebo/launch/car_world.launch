@@ -66,7 +66,7 @@
 ?> 
 
   <!-- start get_fiducial_tf node -->
-  <arg name="use_get_fiducial_tf" default="false" />
+  <arg name="use_get_fiducial_tf" default="true" />
   <node name="get_fiducial_tf" pkg="car_code" type="get_fiducial_tf.py" respawn="false" if="$(arg use_get_fiducial_tf)"/>
 
 </launch>
