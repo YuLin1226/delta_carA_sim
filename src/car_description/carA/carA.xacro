@@ -217,7 +217,7 @@
     <visual>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="home/yulin/carA_sim_ws/src/car_description/carA/meshes/hokuyo.dae" scale="0.050 0.050 0.050"/>
+        <mesh filename="package://car_description/carA/meshes/hokuyo.dae" />
       </geometry>
     </visual>
   </link>
@@ -231,7 +231,7 @@
     <visual>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://car_description/meshes/hokuyo.dae" scale="0.050 0.050 0.050"/>
+        <mesh filename="package://car_description/carA/meshes/hokuyo.dae" />
       </geometry>
     </visual>
   </link>
@@ -239,9 +239,9 @@
   <!-- camera -->
   <link name="camera">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="-0.015 0 -0.0257" rpy="1.5707 0 0"/>
         <geometry>
-            <mesh filename="package://car_description/meshes/hokuyo.dae" scale="0.050 0.050 0.050"/>
+            <mesh filename="package://car_description/carA/meshes/webcam.stl" scale="0.01 0.01 0.01" />
         </geometry>
       </visual>
 
@@ -265,7 +265,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="package://car_description/meshes/hokuyo.dae" scale="0.050 0.050 0.050"/>
+            <mesh filename="package://car_description/carA/meshes/hokuyo.dae" scale="0.050 0.050 0.050"/>
         </geometry>
       </visual>
 
